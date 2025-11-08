@@ -12,9 +12,13 @@
     </div>
   </div>
 
-  <!-- Images Container - outside container to allow full viewport width -->
-  <div class="learn-images-container">
-    <div class="learn-images-grid">
+  <!-- Images Wrapper - for positioning orange rectangle -->
+  <div class="learn-images-wrapper">
+    <!-- Orange rectangle behind images -->
+    <div class="orange-rectangle"></div>
+    <!-- Images Container - outside container to allow full viewport width -->
+    <div class="learn-images-container">
+      <div class="learn-images-grid">
       <!-- Image5: Escape technique demo -->
       <div class="fade-up learn-image-item">
         <div class="learn-image learn-image-5">
@@ -87,13 +91,22 @@
         </div>
       </div>
     </div>
+    </div>
   </div>
 </section>
 
 <style>
+  /* Wrapper for positioning orange rectangle */
+  #kids .learn-images-wrapper {
+    position: relative;
+    margin-top: 185px; /* Vertical spacing: 90px (same as gallery) + 95px (orange rectangle offset) = 185px total */
+  }
+
   /* Images container - handles overflow */
   #kids .learn-images-container {
     overflow-x: hidden; /* Prevent horizontal scroll */
+    position: relative;
+    z-index: 1; /* Above orange rectangle */
   }
 
   /* Images grid - flexbox layout with 20px gaps, 80px margins */
@@ -102,6 +115,8 @@
     gap: 20px;
     margin-left: 80px; /* 80px from left viewport edge */
     margin-right: 80px; /* 80px from right viewport edge */
+    position: relative;
+    z-index: 1; /* Above orange rectangle */
   }
 
   /* Each image item - flex column to stack image and text */
@@ -117,6 +132,7 @@
     background-color: #1f2937; /* bg-gray-800 */
     overflow: hidden;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+    border-radius: 0; /* No rounded corners */
     /* Width: (viewport - 160px margins - 60px gaps) / 4 */
     width: calc((100vw - 220px) / 4);
     /* Height: width / 0.9 (since width = 90% of height) */
@@ -130,5 +146,21 @@
     width: calc((100vw - 220px) / 4); /* Same width as image */
     padding-left: 40px;
     padding-right: 40px;
+  }
+
+  /* Orange rectangle: behind images, left edge touches viewport, 80% width, 95px above images, 320px height */
+  #kids .orange-rectangle {
+    position: absolute;
+    /* Position: 95px above the learn-images-grid */
+    top: -95px;
+    /* Left edge: touching left viewport edge */
+    left: 0;
+    /* Width: 80% of viewport */
+    width: 80vw;
+    /* Height: fixed 320px */
+    height: 320px;
+    background-color: #f97316; /* Orange color */
+    border-radius: 0; /* No rounded corners */
+    z-index: 0; /* Behind images */
   }
 </style>

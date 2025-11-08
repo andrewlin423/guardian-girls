@@ -88,7 +88,7 @@ export default function FAQIsland() {
           </p>
           <button
             onClick={() => window.dispatchEvent(new CustomEvent('open-contact-dialog'))}
-            className="bg-[#6143a5] text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#4a3380] transition-all shadow-xl hover:shadow-2xl"
+            className="bg-[#6143a5] text-white px-8 py-4 font-bold text-lg hover:bg-[#4a3380] transition-all shadow-xl hover:shadow-2xl"
           >
             Get in Touch
           </button>

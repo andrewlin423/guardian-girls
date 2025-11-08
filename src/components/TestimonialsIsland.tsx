@@ -84,10 +84,10 @@ export default function TestimonialsIsland() {
         <div className="max-w-4xl mx-auto fade-up">
           <div className="relative">
             {/* Testimonial Card */}
-            <div className="bg-white text-gray-900 rounded-2xl shadow-2xl p-8 md:p-12 min-h-[300px] flex flex-col justify-between">
+            <div className="bg-white text-gray-900 shadow-2xl p-8 md:p-12 min-h-[300px] flex flex-col justify-between">
               <div>
                 <div className="flex items-center mb-6">
-                  <div className="w-16 h-16 rounded-full bg-[#6143a5] text-white flex items-center justify-center text-xl font-bold mr-4">
+                  <div className="w-16 h-16 bg-[#6143a5] text-white flex items-center justify-center text-xl font-bold mr-4">
                     {testimonials[current].avatar}
                   </div>
                   <div>
@@ -147,7 +147,7 @@ export default function TestimonialsIsland() {
           </p>
           <button
             onClick={() => window.dispatchEvent(new CustomEvent('open-contact-dialog'))}
-            className="bg-white text-[#6143a5] px-8 py-4 rounded-lg font-bold text-lg hover:bg-purple-50 transition-all shadow-xl hover:shadow-2xl"
+            className="bg-white text-[#6143a5] px-8 py-4 font-bold text-lg hover:bg-purple-50 transition-all shadow-xl hover:shadow-2xl"
           >
             Start Training Today
           </button>
