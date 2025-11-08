@@ -1,0 +1,175 @@
+---
+// Gallery Section - Masonry style grid
+---
+
+<section id="gallery" class="py-24 bg-white">
+  <div class="container mx-auto px-4">
+    <!-- Section Header -->
+    <div class="text-center mb-16 fade-up">
+      <p class="text-[#6143a5] font-bold text-sm uppercase tracking-wide mb-2">
+        See It In Action
+      </p>
+      <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+        Training Gallery
+      </h2>
+      <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+        Real students, real progress, real empowerment. No stock photos of
+        models pretending to know jiu-jitsu.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- Gallery Wrapper -->
+  <div class="gallery-wrapper">
+    <!-- Purple rectangle behind A2, extends to viewport edge -->
+    <div class="purple-rectangle"></div>
+    <!-- Gallery Grid Container - handles overflow -->
+    <div class="gallery-grid-container">
+      <!-- Gallery Grid -->
+      <div class="gallery-grid">
+        <!-- Row 1 -->
+        <!-- Image A1: Mat work wide shot (540x760) -->
+        <div class="fade-up a1-container">
+          <div class="relative bg-gray-800 overflow-hidden shadow-lg cursor-pointer a1-image">
+            <div class="w-full h-full flex items-center justify-center text-white font-bold text-sm">
+              [ImgA1: Mat work wide shot]
+            </div>
+          </div>
+        </div>
+
+        <!-- Image A2: Group class (same height as A1) -->
+        <div class="fade-up a2-container">
+          <div class="relative bg-gray-800 overflow-hidden shadow-lg cursor-pointer a2-image">
+            <div class="w-full h-full flex items-center justify-center text-white font-bold text-sm">
+              [ImgA2: Group class]
+            </div>
+          </div>
+        </div>
+
+        <!-- Row 2 -->
+        <!-- Image A3: Same size as A2 (left side) -->
+        <div class="fade-up a3-container">
+          <div class="relative bg-gray-800 overflow-hidden shadow-lg cursor-pointer a3-image">
+            <div class="w-full h-full flex items-center justify-center text-white font-bold text-sm">
+              [ImgA3: Student success]
+            </div>
+          </div>
+        </div>
+
+        <!-- Image A4: Same size as A1 (right side) -->
+        <div class="fade-up a4-container">
+          <div class="relative bg-gray-800 overflow-hidden shadow-lg cursor-pointer a4-image">
+            <div class="w-full h-full flex items-center justify-center text-white font-bold text-sm">
+              [ImgA4: Sparring session]
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container mx-auto px-4">
+    <!-- Note -->
+    <div class="text-center mt-12 fade-up">
+      <p class="text-gray-500 italic">
+        * Photos of actual students who gave us permission to use them. Unlike those weird stock photo sites.
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Wrapper for positioning purple rectangle */
+  #gallery .gallery-wrapper {
+    position: relative;
+    margin-top: 180px; /* Vertical spacing between subtitle and purple rectangle */
+  }
+
+  /* Container for gallery grid - handles horizontal overflow */
+  #gallery .gallery-grid-container {
+    overflow-x: hidden; /* Prevent horizontal scroll */
+  }
+
+  /* CSS Grid layout: 2 rows, 3 columns (each column = 1/3 of available width) */
+  #gallery .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, calc((100vw - 180px) / 3));
+    grid-template-rows: auto auto;
+    gap: 20px;
+    position: relative;
+    z-index: 1; /* Above purple rectangle */
+    margin-left: 80px; /* 80px from left viewport edge */
+    margin-right: 80px; /* 80px from right viewport edge */
+  }
+
+  /* A1: 1 column width, row 1, column 1 */
+  #gallery .a1-container {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  #gallery .a1-image {
+    /* A1 width = (viewport - 160px margins - 20px gap) / 3 */
+    width: 100%;
+    /* Height maintains 540:760 aspect ratio */
+    height: calc(((100vw - 180px) / 3) * 760 / 540);
+  }
+
+  /* A2: 2 columns width, row 1, columns 2-3 */
+  #gallery .a2-container {
+    grid-column: 2 / 4;
+    grid-row: 1;
+    position: relative;
+    z-index: 1; /* Above purple rectangle */
+  }
+
+  #gallery .a2-image {
+    /* A2 width = spans 2 columns */
+    width: 100%;
+    /* Same height as A1 */
+    height: calc(((100vw - 180px) / 3) * 760 / 540);
+  }
+
+  /* A3: 2 columns width, row 2, columns 1-2 (same size as A2) */
+  #gallery .a3-container {
+    grid-column: 1 / 3;
+    grid-row: 2;
+  }
+
+  #gallery .a3-image {
+    /* A3 width = spans 2 columns - same as A2 */
+    width: 100%;
+    /* Same height as A1 and A2 */
+    height: calc(((100vw - 180px) / 3) * 760 / 540);
+  }
+
+  /* A4: 1 column width, row 2, column 3 (same size as A1) */
+  #gallery .a4-container {
+    grid-column: 3;
+    grid-row: 2;
+  }
+
+  #gallery .a4-image {
+    /* A4 width = 1 column - same as A1 */
+    width: 100%;
+    /* Same height as A1, A2, and A3 */
+    height: calc(((100vw - 180px) / 3) * 760 / 540);
+  }
+
+  /* Purple rectangle: 85% of A2 width, extends 90px above A2, behind A2, touches right viewport edge */
+  #gallery .purple-rectangle {
+    position: absolute;
+    /* Position: 90px above gallery-grid (where A2's top edge is) */
+    top: -90px; /* 90px above the gallery-grid top edge */
+    /* Right edge: position relative to gallery-wrapper, but extend to viewport */
+    /* Since gallery-wrapper might not extend to viewport, calculate from viewport edge */
+    right: calc(100% - 100vw); /* Extend to viewport edge */
+    /* Width: 85% of A2's width */
+    width: calc(((100vw - 180px) * 2 / 3) * 0.85);
+    /* Height: 85% of image height */
+    height: calc((((100vw - 180px) / 3) * 760 / 540) * 0.85);
+    background-color: #6143a5; /* Purple color matching theme */
+    z-index: 0; /* Behind A2 */
+  }
+</style>

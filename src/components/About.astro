@@ -1,0 +1,101 @@
+---
+// About Instructor - Meet Lissy
+---
+
+<section id="about" class="py-24 bg-white">
+  <div class="container mx-auto px-4">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <!-- Image Column -->
+      <div class="fade-up">
+        <div class="relative rounded-2xl overflow-hidden shadow-2xl aspect-[3/4] bg-gray-800 flex items-center justify-center text-white text-xl font-bold">
+          [Img2: Lissy in gi, looking badass]
+          <div class="absolute top-4 right-4 bg-[#6143a5] text-white px-4 py-2 rounded-lg font-bold">
+            Black Belt
+          </div>
+        </div>
+      </div>
+
+      <!-- Content Column -->
+      <div class="fade-up space-y-6">
+        <div>
+          <p class="text-[#6143a5] font-bold text-sm uppercase tracking-wide mb-2">
+            Your Instructor
+          </p>
+          <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            Meet Lissy
+          </h2>
+          <p class="text-xl text-[#6143a5] font-semibold">
+            Black Belt in Brazilian Jiu-Jitsu & Sarcasm
+          </p>
+        </div>
+
+        <div class="space-y-4 text-gray-700 leading-relaxed">
+          <p>
+            Lissy isn't your typical "girl power" instructor who thinks a firm handshake and a
+            confident smile will stop an attacker. She's a Brazilian Jiu-Jitsu black belt who
+            believes in actual, practical self-defense techniques that work even if you're
+            5'2" and weigh 110 lbs.
+          </p>
+
+          <p>
+            With over 15 years of experience choking people (consensually, in controlled
+            environments), Lissy has dedicated her life to teaching girls that they don't need
+            to be bigger or stronger - they just need to be smarter. And maybe a little meaner.
+          </p>
+
+          <p>
+            Her philosophy is simple: <strong>Nobody should ever feel helpless.</strong> Whether
+            it's dealing with a bully at school, walking alone at night, or just wanting to feel
+            more confident in your own skin, Lissy provides private, personalized training that
+            actually prepares you for real-world situations.
+          </p>
+
+          <p class="italic text-gray-600">
+            "I don't teach my students to fight. I teach them to win. There's a difference." - Lissy
+          </p>
+        </div>
+
+        <!-- Credentials -->
+        <div class="grid grid-cols-2 gap-4 pt-4">
+          <div class="bg-gray-50 p-4 rounded-lg">
+            <p class="text-3xl font-bold text-[#6143a5]">15+</p>
+            <p class="text-sm text-gray-600">Years Training</p>
+          </div>
+
+          <div class="bg-gray-50 p-4 rounded-lg">
+            <p class="text-3xl font-bold text-[#6143a5]">200+</p>
+            <p class="text-sm text-gray-600">Students Trained</p>
+          </div>
+
+          <div class="bg-gray-50 p-4 rounded-lg">
+            <p class="text-3xl font-bold text-[#6143a5]">100%</p>
+            <p class="text-sm text-gray-600">Badass Rating</p>
+          </div>
+
+          <div class="bg-gray-50 p-4 rounded-lg">
+            <p class="text-3xl font-bold text-[#6143a5]">0</p>
+            <p class="text-sm text-gray-600">Tolerance for BS</p>
+          </div>
+        </div>
+
+        <div>
+          <button
+            class="bg-[#6143a5] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#4a3380] transition-colors shadow-lg hover:shadow-xl cta-button"
+          >
+            Train With Lissy
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // About CTA opens contact dialog
+  const ctaButtons = document.querySelectorAll('.cta-button');
+  ctaButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      window.dispatchEvent(new CustomEvent('open-contact-dialog'));
+    });
+  });
+</script>
