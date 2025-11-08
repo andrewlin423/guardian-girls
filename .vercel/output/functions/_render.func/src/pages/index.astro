@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import KidsLearn from '../components/KidsLearn.astro';
+import Gallery from '../components/Gallery.astro';
+import FAQIsland from '../components/FAQIsland';
+import TestimonialsIsland from '../components/TestimonialsIsland';
+import ContactDialogIsland from '../components/ContactDialogIsland';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout>
+  <Header />
+  <main>
+    <Hero />
+    <About />
+    <Gallery />
+    <KidsLearn />
+    <FAQIsland client:load />
+    <TestimonialsIsland client:load />
+  </main>
+  <Footer />
+
+  <!-- Contact Dialog - Always mounted, controlled by events -->
+  <ContactDialogIsland client:load />
+</BaseLayout>
